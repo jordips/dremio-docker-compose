@@ -2,19 +2,8 @@ version: "3"
 
 services:
   dremio:
-    restart: always
-    image: dremio/dremio-oss:4.8.0
-    hostname: dremio
-    volumes:
-      - ./dremio.conf:/opt/dremio/conf/dremio.conf:ro
-      - ./dremio-env:/opt/dremio/conf/dremio-env:ro
-      - dremio_data:/var/lib/dremio
-#      - ./certs:/etc/certs:ro
-    ports:
-      - "9047:9047"   # UI (HTTP)
-      - "31010:31010" # ODBC/JDBC clients
-      - "2181:2181"   # ZooKeeper
-      - "45678:45678" # Inter-node communication
-
-volumes:
-  dremio_data:
+    restart: "no"
+    build:
+      context: .
+      args:
+        - UPGRADE_VERSION=latest
