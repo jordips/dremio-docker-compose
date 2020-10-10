@@ -5,6 +5,7 @@ This is a docker-compose for Dremio software using oficial Docker image. When yo
 This implementation allows you to stop Dremio, build another image from official one but changing entrypoint and using docker-compose to attach volume data and execute "dremi-admin upgrade" to dremio instance without Dremio beeing started. Then you can run new version without problems.
 
 ## Start dremio in background mode
+Set desired version in docker-compose.yml file (change docker image tag) and then run:
 ```
 docker-compose up -d
 ```
