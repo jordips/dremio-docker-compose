@@ -10,10 +10,10 @@ docker-compose up -d
 
 ## Upgrade dremio to new version:
 
-If you want to upgrade dremio to certain version these are the steps you have to follow (set UPGRADE_VERSION to desired version):
+If you want to upgrade dremio to certain version these are the steps you have to follow (set UPGRADE_VERSION to desired version, replace X.X.X for instance 4.8.0):
 ```
 docker-compose down
-docker-compose -f docker-compose.upgrade.yml build --build-arg UPGRADE_VERSION=4.8.0
+docker-compose -f docker-compose.upgrade.yml build --build-arg UPGRADE_VERSION=X.X.X
 docker-compose -f docker-compose.upgrade.yml run dremio "/opt/dremio/bin/dremio-admin upgrade"
 docker-compose down
 ```
