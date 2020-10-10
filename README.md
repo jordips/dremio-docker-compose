@@ -2,7 +2,7 @@
 
 This is a docker-compose for Dremio software using oficial Docker image. When you want to upgrade Dremio you have to execute a command before start new version. Currently Docker image has ENTRYPOINT set to start dremio so you are not able to execute this comand in a easy way.
 
-This implementation allow you to stop Dremio, build another image from official one but changing entrypoint and using docker-compose to attach volume data and execute "dremi-admin upgrade" to dremio instance without Dremio beeing started. Then you can run new version without problems.
+This implementation allows you to stop Dremio, build another image from official one but changing entrypoint and using docker-compose to attach volume data and execute "dremi-admin upgrade" to dremio instance without Dremio beeing started. Then you can run new version without problems.
 
 ## Start dremio in background mode
 ```
