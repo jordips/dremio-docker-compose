@@ -7,3 +7,10 @@ services:
       context: .
       args:
         - UPGRADE_VERSION=latest
+    volumes:
+      - ./dremio.conf:/opt/dremio/conf/dremio.conf:ro
+      - ./dremio-env:/opt/dremio/conf/dremio-env:ro
+      - dremio_data:/var/lib/dremio
+
+volumes:
+  dremio_data:
